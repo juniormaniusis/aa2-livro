@@ -201,7 +201,21 @@ header.hero p {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .navbar { padding: 1rem; }
+  .navbar {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .nav-links a {
+    margin-left: 0;
+  }
   header.hero h2 { font-size: 2.2rem; }
   .card { padding: 1.5rem; }
 }

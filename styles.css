@@ -197,6 +197,27 @@ body {
     padding: 20px 24px;
     border-top: var(--border-width) solid var(--border);
 }
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.sidebar-link {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 8px 12px;
+    border: var(--border-width) solid var(--border);
+    background: var(--bg-primary);
+    transition: all 0.1s;
+    text-align: center;
+}
+.sidebar-link:hover {
+    box-shadow: 2px 2px 0 var(--border);
+    background: var(--accent-bg);
+}
 .sidebar-meta p {
     font-family: var(--font-code);
     font-size: 10px;
@@ -489,6 +510,12 @@ body {
     .app-container {
         height: auto;
         min-height: 100vh;
+    }
+    .main-content {
+        overflow: visible;
+    }
+    .exercises-container {
+        overflow: visible;
     }
     .content-header {
         padding: 20px 24px;
