@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cola (Papo Reto) - Análise de Algoritmos II</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="cola.css">
+
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Cheat Sheet AA II (Versão Simples)</h1>
+        <div class="nav-links">
+            <a href="cola.html">Ver Original (Matemática Rigorosa)</a>
+            <a href="index.html">Exercícios</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero">
+            <h2>Papo Reto & Resoluções Explicadas</h2>
+            <p>Esqueça o juridiquês acadêmico. Aqui está o núcleo duro dos algoritmos gulosos e árvores geradoras com linguagem direta, pra te salvar no dia da prova.</p>
+        </header>
+
+        <section class="card">
+            <h3>📖 Resoluções de Aluno pra Aluno</h3>
+            <div id="resolutions-content">
+                <p>Carregando resoluções simplificadas...</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('resolucoes_simples.md')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Falha ao carregar as resoluções simples.');
+                    }
+                    return response.text();
+                })
+                .then(markdown => {
+                    // Converter markdown para HTML usando marked.js
+                    const html = marked.parse(markdown);
+                    document.getElementById('resolutions-content').innerHTML = html;
+                    
+                    // Renderizar equações matemáticas com KaTeX
+                    renderMathInElement(document.getElementById('resolutions-content'), {
+                        delimiters: [
+                            {left: '$$', right: '$$', display: true},
+                            {left: '$', right: '$', display: false},
+                            {left: '\\(', right: '\\)', display: false},
+                            {left: '\\[', right: '\\]', display: true}
+                        ],
+                        throwOnError: false
+                    });
+                })
+                .catch(error => {
+                    document.getElementById('resolutions-content').innerHTML = 
+                        '<p style="color: #ef4444;">Erro ao carregar resoluções: Certifique-se de que o arquivo resolucoes_simples.md está no diretório e o servidor está rodando.</p>';
+                });
+        });
+    </script>
+</body>
+</html>
