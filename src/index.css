@@ -6,6 +6,27 @@
     --font-code: 'Fira Code', monospace;
     --transition: 0.15s ease-out;
     --sidebar-width: 320px;
+
+    /* Dark theme as default */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --bg-card: #141414;
+    --border: #444444;
+    --border-width: 1px;
+    --shadow: 4px 4px 0px #fbbf24;
+    --shadow-hover: 6px 6px 0px #fbbf24;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --accent: #fbbf24;
+    --accent-bg: rgba(251, 191, 36, 0.1);
+    --difficulty-easy: #10b981;
+    --difficulty-easy-bg: rgba(16, 185, 129, 0.1);
+    --difficulty-medium: #f59e0b;
+    --difficulty-medium-bg: rgba(245, 158, 11, 0.1);
+    --difficulty-hard: #ef4444;
+    --difficulty-hard-bg: rgba(239, 68, 68, 0.1);
+    --grid-color: rgba(255, 255, 255, 0.03);
 }
 
 .light-theme {
