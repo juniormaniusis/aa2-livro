@@ -481,6 +481,109 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow: auto;
+    }
+    .app-container {
+        height: auto;
+        min-height: 100vh;
+    }
+    .content-header {
+        padding: 20px 24px;
+        align-items: flex-start;
+    }
+    .header-controls {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    .exercises-container {
+        padding: 24px;
+    }
     .exercises-grid { grid-template-columns: 1fr; }
     .card-body.view-split { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: var(--border-width) solid var(--border);
+    }
+    .sidebar-header,
+    .sidebar-footer {
+        padding: 16px 20px;
+    }
+    .search-box {
+        margin: 16px 20px 8px;
+    }
+    .sidebar-menu {
+        max-height: 240px;
+        padding: 8px 20px 16px;
+    }
+    .content-header {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .header-title-area h2 {
+        font-size: 16px;
+    }
+    .header-title-area p {
+        font-size: 11px;
+    }
+    .header-controls {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+    }
+    .control-group {
+        min-width: 0;
+        flex-wrap: wrap;
+    }
+    .toggle-buttons {
+        flex-wrap: wrap;
+    }
+    .toggle-btn {
+        border-bottom: var(--border-width) solid var(--border);
+    }
+    .toggle-btn:last-child {
+        border-bottom: none;
+    }
+    .stats-bar {
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+    .stat-card {
+        min-width: 50%;
+        padding: 14px 20px;
+    }
+    .exercises-container {
+        padding: 16px;
+    }
+    .exercise-card {
+        box-shadow: none;
+    }
+    .card-header,
+    .card-body,
+    .collapsible-header-btn,
+    .solution-notes,
+    .notes-status-row {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .card-title-row {
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .exercise-title {
+        font-size: 15px;
+    }
+    .card-actions {
+        flex-shrink: 0;
+    }
 }
